@@ -2,6 +2,7 @@ OUTPUT_DIR := "outputs"
 
 outputs:
   mkdir -p {{ OUTPUT_DIR }}
+  rm -rf {{ OUTPUT_DIR }}/*
 
 hello-world: outputs
   #!/bin/bash
@@ -17,3 +18,8 @@ temp-convertor-df: outputs
   #!/bin/bash
   gcc temp-convertor/df.c -o {{ OUTPUT_DIR }}/df-tc.out
   ./{{ OUTPUT_DIR }}/df-tc.out
+
+charachters: outputs
+  #!/bin/bash
+  clang --std=c23 charachters/main.c -o {{ OUTPUT_DIR }}/charachters.out
+  ./{{ OUTPUT_DIR }}/charachters.out
