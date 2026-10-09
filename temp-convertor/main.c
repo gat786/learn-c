@@ -36,7 +36,17 @@ void fahr_to_celc(){
   }
 }
 
+void for_looper(){
+  float celcius;
+  printf("%5s %10s\n", "fahr", "celc");
+  for (float fahr = 0; fahr <= 300; fahr += 20){
+    celcius = 5.0/9.0 * (fahr - 32.0);
+    printf("%5.0f %10.1f\n", fahr, celcius);
+  }
+}
+
 int main(){
   fahr_to_celc();
   celc_to_fahr();
+  for_looper();
 }

@@ -12,3 +12,8 @@ temp-convertor: outputs
   #!/bin/bash
   gcc temp-convertor/main.c -o {{ OUTPUT_DIR }}/tc.out
   ./{{ OUTPUT_DIR }}/tc.out
+
+temp-convertor-df: outputs
+  #!/bin/bash
+  gcc temp-convertor/df.c -o {{ OUTPUT_DIR }}/df-tc.out
+  ./{{ OUTPUT_DIR }}/df-tc.out
