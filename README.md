@@ -6,4 +6,4 @@ Lesson by lesson
 2. [Temperature Convertor](./temp-convertor)
 3. [Charachters](./charachters)
 
-    *. [Word Count Implementation](./charachters/word-count/)
+    * [Word Count Implementation](./charachters/word-count/)
