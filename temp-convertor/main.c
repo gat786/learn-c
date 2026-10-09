@@ -1,7 +1,25 @@
 #include <stdio.h>
 
-int main(){
-  int fahr, celcius;
+void celc_to_fahr(){
+  float celcius, fahr;
+  int lower, upper, step;
+
+  lower = 0;
+  upper = 300;
+  step = 20;
+
+  celcius = lower;
+
+  printf("%5s %10s\n", "fahr", "celc");
+  while (celcius <= upper){
+    fahr = 9.0/5.0 * celcius + 32.0;
+    printf("%5.1f %10.0f\n", fahr, celcius);
+    celcius += step;
+  }
+}
+
+void fahr_to_celc(){
+  float celcius, fahr;
   int lower, upper, step;
 
   lower = 0;
@@ -10,9 +28,15 @@ int main(){
 
   fahr = lower;
 
+  printf("%5s %10s\n", "fahr", "celc");
   while (fahr <= upper){
-    celcius = 5 * (fahr - 32) / 9;
-    printf("%d\t%d\n", fahr, celcius);
+    celcius = 5.0/9.0 * (fahr - 32.0);
+    printf("%5.0f %10.1f\n", fahr, celcius);
     fahr += step;
   }
+}
+
+int main(){
+  fahr_to_celc();
+  celc_to_fahr();
 }
