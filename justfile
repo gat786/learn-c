@@ -7,3 +7,8 @@ hello-world: outputs
   #!/bin/bash
   gcc hello-world/main.c -o {{ OUTPUT_DIR }}/hw.out
   ./{{ OUTPUT_DIR }}/hw.out
+
+f-to-c: outputs
+  #!/bin/bash
+  gcc temp-convertor/main.c -o {{ OUTPUT_DIR }}/tc.out
+  ./{{ OUTPUT_DIR }}/tc.out
