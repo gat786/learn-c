@@ -23,3 +23,8 @@ charachters: outputs
   #!/bin/bash
   clang --std=c23 charachters/main.c -o {{ OUTPUT_DIR }}/charachters.out
   ./{{ OUTPUT_DIR }}/charachters.out
+
+word-count: outputs
+  #!/bin/bash
+  clang --std=c23 word-count/main.c -o {{ OUTPUT_DIR }}/word-count.out
+  ./{{ OUTPUT_DIR }}/word-count.out
