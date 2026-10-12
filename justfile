@@ -33,3 +33,8 @@ arrays-count: outputs
   #!/bin/bash
   clang arrays/main.c -o {{ OUTPUT_DIR }}/arrays-count.out
   ./{{ OUTPUT_DIR }}/arrays-count.out
+
+arrays-wl-count: outputs
+  #!/bin/bash
+  clang arrays/wl-count.c -o {{ OUTPUT_DIR }}/arrays-wl-count.out
+  ./{{ OUTPUT_DIR }}/arrays-wl-count.out
