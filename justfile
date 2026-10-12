@@ -28,3 +28,8 @@ word-count: outputs
   #!/bin/bash
   clang charachters/word-count/main.c -o {{ OUTPUT_DIR }}/word-count.out
   ./{{ OUTPUT_DIR }}/word-count.out
+
+arrays-count: outputs
+  #!/bin/bash
+  clang arrays/main.c -o {{ OUTPUT_DIR }}/arrays-count.out
+  ./{{ OUTPUT_DIR }}/arrays-count.out
