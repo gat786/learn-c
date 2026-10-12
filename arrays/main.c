@@ -9,11 +9,11 @@ int main() {
     ndigit[i] = 0;
   while ((c = getchar()) != EOF)
     if (c >= '0' && c <= '9')
-      ++ndigit[c-'0'];
+      ndigit[c-'0'] += 1;
     else if (c == ' ' || c == '\n' || c == '\t')
-      ++nwhite;
+      nwhite += 1;
     else
-      ++nother;
+      nother += 1;
   printf("digits =");
   for (i = 0; i < 10; ++i)
     printf(" %d" , ndigit[i]);
