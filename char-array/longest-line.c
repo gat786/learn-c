@@ -18,14 +18,20 @@ int main() {
       copy(longest, line);
     }
 
-  if (max > 0) /* there was a line */
-    printf("%s", longest);
+  if (max > 0) /* there was a line */ {
+    printf("%s\n", longest);
+    for(int i = 0; i < 25; i++) printf("-");
+    printf("\n");
+    printf("number of chars: %d\n", max);
+  }
   return 0;
 }
+
 /* getline2: read a line into s, return length */
+// s is getting passed as a reference because it is an array
 int getline2(char s[],int lim) {
   int c, i;
-  for (i=0; i < lim-1 && (c=getchar())!=EOF && c!= '\n'; ++i)
+  for (i=0; i < lim-1 && (c=getchar()) != EOF && c != '\n'; ++i)
     s[i] = c;
   if (c == '\n') {
     s[i] = c;

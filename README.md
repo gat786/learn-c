@@ -21,4 +21,4 @@ Lesson by lesson
 
     Arrays are passed as references. Make note of that.
 
-6. Charachter Array (strings - voila)
+6. [Charachter Array (strings - voila)](./char-array)

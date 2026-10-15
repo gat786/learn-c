@@ -39,7 +39,7 @@ arrays-wl-count: outputs
   clang arrays/wl-count.c -o {{ OUTPUT_DIR }}/arrays-wl-count.out
   ./{{ OUTPUT_DIR }}/arrays-wl-count.out
 
-char-array: outputs
+ca-longest-line: outputs
   #!/bin/bash
-  clang char-array/main.c -o {{ OUTPUT_DIR }}/char-array.out
-  ./{{ OUTPUT_DIR }}/char-array.out
+  clang char-array/longest-line.c -o {{ OUTPUT_DIR }}/ca-longest-line.out
+  ./{{ OUTPUT_DIR }}/ca-longest-line.out
