@@ -43,3 +43,8 @@ ca-longest-line: outputs
   #!/bin/bash
   clang char-array/longest-line.c -o {{ OUTPUT_DIR }}/ca-longest-line.out
   ./{{ OUTPUT_DIR }}/ca-longest-line.out
+
+ca-longest-line-d: outputs
+  #!/bin/bash
+  clang -g char-array/longest-line-dynamic.c -o {{ OUTPUT_DIR }}/ca-longest-line-dynamic.out
+  lldb ./{{ OUTPUT_DIR }}/ca-longest-line-dynamic.out
