@@ -1,0 +1,15 @@
+01-empty.txt	0
+02-single-line.txt	11
+03-longest-in-middle.txt	29
+04-longest-first.txt	38
+05-longest-last.txt	29
+06-no-trailing-newline.txt	32
+07-only-blank-lines.txt	0
+08-tabs-and-spaces.txt	18
+09-tie.txt	5
+10-exactly-998.txt	998
+11-exactly-999.txt	999
+12-exactly-1000.txt	1000
+13-long-2500.txt	2500
+14-two-long-lines.txt	3200
+15-long-no-newline.txt	4000

@@ -1,0 +1,2 @@
+short
+last line has no newline at end
