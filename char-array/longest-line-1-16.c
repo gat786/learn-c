@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define MAXLINE 1000 /* maximum input line length */
 
@@ -7,34 +8,37 @@ void copy(char to[], char from[]);
 
 /* print the longest input line */
 int main() {
-  int len; /* current line length */
-  char line[MAXLINE]; /* current input line */
+  char line[MAXLINE];
+  int len = 0;
 
-  int max; /* maximum length seen so far */
-  max = 0;
+  // char *longest;
+  // longest = malloc(MAXLINE);
 
-  char *curr_buffer, *tmp_buffer, *longest;
-  int curr_buffer_l, tmp_buffer_l;
+  int curr_line_length = 0;
+  int maximum = 0;
 
-  int current_line_length = 0;
-  max = 0;
-  while ((len = getline2(line, MAXLINE)) > 0){
+  while ((len = getline2(line, MAXLINE)) > 0) {
+    curr_line_length += (len - 1);
+
     if (line[len - 1] != '\n') {
-      /* there was no line break found */
-      current_line_length += (len - 2);
       continue;
     }
-    current_line_length += (len - 1);
-    if (current_line_length > max) {
-      max = current_line_length;
+
+    if (curr_line_length > maximum) {
+      maximum = curr_line_length;
     }
-    if(line[len - 1] == '\n'){
-      current_line_length = 0;
+
+    if (line[len - 1] == '\n') {
+      curr_line_length = 0;
+    }
+  }
+  if (line[len - 1] != '\n' && line[len] == '\0') {
+    if (len > maximum) {
+      maximum = len;
     }
   }
 
-  printf("max: %d\n", max);
-  return 0;
+  printf("maximum: %d", maximum);
 }
 
 /* getline2: read a line into s, return length */
