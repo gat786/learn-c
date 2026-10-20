@@ -3,7 +3,7 @@
 03-longest-in-middle.txt	29
 04-longest-first.txt	38
 05-longest-last.txt	29
-06-no-trailing-newline.txt	32
+06-no-trailing-newline.txt	31
 07-only-blank-lines.txt	0
 08-tabs-and-spaces.txt	18
 09-tie.txt	5

@@ -18,25 +18,17 @@ int main() {
   int maximum = 0;
 
   while ((len = getline2(line, MAXLINE)) > 0) {
-    curr_line_length += (len - 1);
+    curr_line_length += len;
 
-    if (line[len - 1] != '\n') {
+    if (line[len-1] == '\n'){
+      if (curr_line_length - 1 > maximum){
+        maximum = (curr_line_length - 1);
+      }
+      curr_line_length = 0;
       continue;
     }
-
-    if (curr_line_length > maximum) {
-      maximum = curr_line_length;
-    }
-
-    if (line[len - 1] == '\n') {
-      curr_line_length = 0;
-    }
   }
-  if (line[len - 1] != '\n' && line[len] == '\0') {
-    if (len > maximum) {
-      maximum = len;
-    }
-  }
+  if (curr_line_length > maximum) maximum = curr_line_length;
 
   printf("maximum: %d", maximum);
 }
