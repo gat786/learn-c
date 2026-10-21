@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 #define MAXLINE 1000 /* maximum input line length */
 
@@ -11,26 +10,35 @@ int main() {
   char line[MAXLINE];
   int len = 0;
 
-  // char *longest;
-  // longest = malloc(MAXLINE);
+  char longest[MAXLINE] = "\0";
+  int maximum = 0;
+
+  char curr_line[MAXLINE];
 
   int curr_line_length = 0;
-  int maximum = 0;
 
   while ((len = getline2(line, MAXLINE)) > 0) {
     curr_line_length += len;
+    if(curr_line_length < MAXLINE){
+      copy(&curr_line[curr_line_length - len], line);
+    }
 
     if (line[len-1] == '\n'){
       if (curr_line_length - 1 > maximum){
         maximum = (curr_line_length - 1);
+        copy(longest, curr_line);
       }
       curr_line_length = 0;
       continue;
     }
   }
-  if (curr_line_length > maximum) maximum = curr_line_length;
+  if (curr_line_length > maximum) {
+    maximum = curr_line_length;
+    copy(longest, curr_line);
+  }
 
-  printf("maximum: %d", maximum);
+  printf("maximum: %d\n", maximum);
+  printf("stored string: %s\n", longest);
 }
 
 /* getline2: read a line into s, return length */
