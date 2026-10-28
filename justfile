@@ -58,3 +58,8 @@ ca-more-than-80: outputs
   #!/bin/bash
   clang char-array/more-than-80.c -o {{ OUTPUT_DIR }}/ca-more-than-80.out
   ./{{ OUTPUT_DIR }}/ca-more-than-80.out
+
+ca-remove-trailing-blanks: outputs
+  #!/bin/bash
+  clang -g char-array/remove-trailing-blanks.c -o {{ OUTPUT_DIR }}/ca-remove-trailing-blanks.out
+  ./{{ OUTPUT_DIR }}/ca-remove-trailing-blanks.out
